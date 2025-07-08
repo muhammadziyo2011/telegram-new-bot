@@ -41,7 +41,7 @@ const App = () => {
     }else{
       const newData = cartItems.map(c =>
         c.id === item.id
-          ? { ...existItem, quantity: existItem.quantity + 1 }
+          ? { ...existItem, quantity: existItem.quantity - 1 }
           : c
       );
       setCartItems(newData)
