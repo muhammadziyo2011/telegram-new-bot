@@ -1,3 +1,4 @@
-export const totalPrice = (arr) => {
-    return arr.reduce((a, c) => a + c.price * c.quantity, 0);
-};
+export const totalPrice = (items) => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+  
