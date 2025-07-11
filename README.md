@@ -7,3 +7,4 @@
 "# muhammadziyouz_bot" 
 "# vercell_botuz" 
 "# new_vercel_bot" 
+"# telegram-new-bot" 
