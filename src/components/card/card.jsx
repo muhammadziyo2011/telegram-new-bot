@@ -2,18 +2,19 @@ import { useState } from "react";
 import Button from '../button/button';
 import './card.css';
 
-const Card = ({ course, onAddItem, onRemoveItem }) => {
+const Card = props => {
   const [count, setCount] = useState(0);
+  const { course, onAddItem, onRemoveItem } = props;
 
   const handleIncrement = () => {
-    setCount(prev => prev + 1);
-    onAddItem(course);
-  };
+    setCount(prev => prev + 1)
+    onAddItem(course)
+  }
 
-  const handleDecrement = () => {
-    setCount(prev => prev - 1);
-    onRemoveItem(course);
-  };
+  const handleDecerement = () => {
+    setCount(prev => prev - 1)
+    onRemoveItem(course)
+  }
 
   return (
     <div className="card">
@@ -23,8 +24,8 @@ const Card = ({ course, onAddItem, onRemoveItem }) => {
         <img
           src={course.Image}
           alt={course.title}
-          width="100%"
-          height="230px"
+          width={'100%'}
+          height={'230px'}
         />
       </div>
 
@@ -41,8 +42,19 @@ const Card = ({ course, onAddItem, onRemoveItem }) => {
       <div className="hr"></div>
 
       <div className="btn__container">
-        <Button title="+" onClick={handleIncrement} type="add" />
-        {count !== 0 && <Button title="-" onClick={handleDecrement} type="remove" />}
+        <Button 
+          title={'+'} 
+          onClick={handleIncrement} 
+          type={"add"} 
+          />
+
+          {count !== 0 && (
+              <Button 
+                title={'-'} 
+                onClick={handleDecerement} 
+                type={"remove"} 
+              />
+          )}
       </div>
     </div>
   );
